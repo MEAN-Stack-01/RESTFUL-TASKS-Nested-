@@ -1,0 +1,27 @@
+<div class="info" style="text-align:center">
+   <h4>REQUESTED TASK</h4>
+
+   <h6> {{taskToShow.title }}  </h6>
+   <p> {{taskToShow.description}} </p>
+
+  <br>
+  <button class="btn btn-primary" (click)="onButtonClickShow(taskToShow);show=!show">EDIT</button>
+  <button class="btn btn-primary del" (click)="onDeleteButtonClick(taskToShow._id)">DELETE</button>
+</div>
+
+
+<div class="newtask" style="text-align:center" *ngIf="show">
+  <form (submit)="onEdit()">
+
+    <div class="form-group row">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="editTask.title" [(ngModel)]="editTask.title" />
+    </div>
+    <div class="form-group row">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" name="editTask.descriiption" [(ngModel)]="editTask.description">
+    </div>
+
+    <button type="submit" class="btn btn-primary">EDIT</button>
+  </form>
+</div>

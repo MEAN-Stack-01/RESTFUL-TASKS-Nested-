@@ -1,0 +1,33 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="root">
+  <div style="text-align:center" class= "title">
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+  </div>
+
+  <div class="newtask" style="text-align:center">
+    <form (submit)="onSubmit()">
+
+      <div class="form-group row">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title" name="newTask.title" [(ngModel)]="newTask.title" />
+      </div>
+      <div class="form-group row">
+          <label for="description">Description</label>
+          <input type="text" class="form-control" id="description" name="newTask.descriiption" [(ngModel)]="newTask.description">
+      </div>
+
+      <button type="submit" class="btn btn-primary button">Create</button>
+    </form>
+  </div>
+
+  <div class="tasks" style="text-align:center">
+    <button class="btn btn-primary button" (click)="onButtonClick()" >SHOW ALL TASKS</button>
+    <h4 > ALL TASKS </h4>
+    <li style="text-align:center" *ngFor="let task of tasks; let i = index">Task : {{task.title}} Description : {{task.description}}
+      <button class="btn btn-primary" (click)="onButtonClickParam(task._id)">SHOW</button>
+    </li>
+  </div>
+  <app-task *ngIf="requestedTask" [taskToShow]="requestedTask"></app-task>
+</div>

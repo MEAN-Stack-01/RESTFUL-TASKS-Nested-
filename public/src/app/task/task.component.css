@@ -1,0 +1,22 @@
+
+.info{
+  margin-top: 1em;
+  border : 5px solid red;
+  border-radius: 10px;
+  padding: 0.5em;
+  font-size: 1.5em;
+
+}
+
+.info p{
+  font-style: italic;
+}
+
+.newtask{
+  margin-top: 1em;
+  border : 5px solid red;
+  border-radius: 10px;
+  padding: 1em;
+  font-size: 1.5em;
+
+}
